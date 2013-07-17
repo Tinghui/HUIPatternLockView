@@ -10,7 +10,33 @@
 		E1CD334217968ED500101EF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CD334117968ED500101EF9 /* Foundation.framework */; };
 		E1CD334717968ED500101EF9 /* HUIPatternLockView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E1CD334617968ED500101EF9 /* HUIPatternLockView.h */; };
 		E1CD334917968ED500101EF9 /* HUIPatternLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD334817968ED500101EF9 /* HUIPatternLockView.m */; };
+		E1CD33551796950900101EF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CD33541796950900101EF9 /* UIKit.framework */; };
+		E1CD33561796950900101EF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CD334117968ED500101EF9 /* Foundation.framework */; };
+		E1CD33581796950900101EF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CD33571796950900101EF9 /* CoreGraphics.framework */; };
+		E1CD335E1796950900101EF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1CD335C1796950900101EF9 /* InfoPlist.strings */; };
+		E1CD33601796950900101EF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD335F1796950900101EF9 /* main.m */; };
+		E1CD33641796950900101EF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD33631796950900101EF9 /* AppDelegate.m */; };
+		E1CD33661796950900101EF9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33651796950900101EF9 /* Default.png */; };
+		E1CD33681796950900101EF9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33671796950900101EF9 /* Default@2x.png */; };
+		E1CD336A1796950900101EF9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33691796950900101EF9 /* Default-568h@2x.png */; };
+		E1CD336D1796950900101EF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD336C1796950900101EF9 /* ViewController.m */; };
+		E1CD33701796950900101EF9 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD336E1796950900101EF9 /* ViewController.xib */; };
+		E1CD33761796951900101EF9 /* libHUIPatternLockView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CD333E17968ED500101EF9 /* libHUIPatternLockView.a */; };
+		E1CD337B1796986E00101EF9 /* patternlock_dot_normal_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33771796986E00101EF9 /* patternlock_dot_normal_highlighted.png */; };
+		E1CD337C1796986E00101EF9 /* patternlock_dot_normal_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33781796986E00101EF9 /* patternlock_dot_normal_highlighted@2x.png */; };
+		E1CD337D1796986E00101EF9 /* patternlock_dot_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33791796986E00101EF9 /* patternlock_dot_normal.png */; };
+		E1CD337E1796986E00101EF9 /* patternlock_dot_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD337A1796986E00101EF9 /* patternlock_dot_normal@2x.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1CD33741796951400101EF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1CD333617968ED500101EF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1CD333D17968ED500101EF9;
+			remoteInfo = HUIPatternLockView;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E1CD333C17968ED500101EF9 /* CopyFiles */ = {
@@ -31,6 +57,25 @@
 		E1CD334517968ED500101EF9 /* HUIPatternLockView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HUIPatternLockView-Prefix.pch"; sourceTree = "<group>"; };
 		E1CD334617968ED500101EF9 /* HUIPatternLockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUIPatternLockView.h; sourceTree = "<group>"; };
 		E1CD334817968ED500101EF9 /* HUIPatternLockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUIPatternLockView.m; sourceTree = "<group>"; };
+		E1CD33531796950900101EF9 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1CD33541796950900101EF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E1CD33571796950900101EF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E1CD335B1796950900101EF9 /* Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Demo-Info.plist"; sourceTree = "<group>"; };
+		E1CD335D1796950900101EF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1CD335F1796950900101EF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1CD33611796950900101EF9 /* Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Prefix.pch"; sourceTree = "<group>"; };
+		E1CD33621796950900101EF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E1CD33631796950900101EF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E1CD33651796950900101EF9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E1CD33671796950900101EF9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E1CD33691796950900101EF9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E1CD336B1796950900101EF9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E1CD336C1796950900101EF9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E1CD336F1796950900101EF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		E1CD33771796986E00101EF9 /* patternlock_dot_normal_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = patternlock_dot_normal_highlighted.png; sourceTree = "<group>"; };
+		E1CD33781796986E00101EF9 /* patternlock_dot_normal_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "patternlock_dot_normal_highlighted@2x.png"; sourceTree = "<group>"; };
+		E1CD33791796986E00101EF9 /* patternlock_dot_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = patternlock_dot_normal.png; sourceTree = "<group>"; };
+		E1CD337A1796986E00101EF9 /* patternlock_dot_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "patternlock_dot_normal@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +87,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1CD33501796950900101EF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CD33761796951900101EF9 /* libHUIPatternLockView.a in Frameworks */,
+				E1CD33551796950900101EF9 /* UIKit.framework in Frameworks */,
+				E1CD33561796950900101EF9 /* Foundation.framework in Frameworks */,
+				E1CD33581796950900101EF9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -49,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				E1CD334317968ED500101EF9 /* HUIPatternLockView */,
+				E1CD33591796950900101EF9 /* Demo */,
 				E1CD334017968ED500101EF9 /* Frameworks */,
 				E1CD333F17968ED500101EF9 /* Products */,
 			);
@@ -58,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				E1CD333E17968ED500101EF9 /* libHUIPatternLockView.a */,
+				E1CD33531796950900101EF9 /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				E1CD334117968ED500101EF9 /* Foundation.framework */,
+				E1CD33541796950900101EF9 /* UIKit.framework */,
+				E1CD33571796950900101EF9 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -84,6 +144,37 @@
 			isa = PBXGroup;
 			children = (
 				E1CD334517968ED500101EF9 /* HUIPatternLockView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1CD33591796950900101EF9 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				E1CD33771796986E00101EF9 /* patternlock_dot_normal_highlighted.png */,
+				E1CD33781796986E00101EF9 /* patternlock_dot_normal_highlighted@2x.png */,
+				E1CD33791796986E00101EF9 /* patternlock_dot_normal.png */,
+				E1CD337A1796986E00101EF9 /* patternlock_dot_normal@2x.png */,
+				E1CD33621796950900101EF9 /* AppDelegate.h */,
+				E1CD33631796950900101EF9 /* AppDelegate.m */,
+				E1CD336B1796950900101EF9 /* ViewController.h */,
+				E1CD336C1796950900101EF9 /* ViewController.m */,
+				E1CD336E1796950900101EF9 /* ViewController.xib */,
+				E1CD335A1796950900101EF9 /* Supporting Files */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		E1CD335A1796950900101EF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1CD335B1796950900101EF9 /* Demo-Info.plist */,
+				E1CD335C1796950900101EF9 /* InfoPlist.strings */,
+				E1CD335F1796950900101EF9 /* main.m */,
+				E1CD33611796950900101EF9 /* Demo-Prefix.pch */,
+				E1CD33651796950900101EF9 /* Default.png */,
+				E1CD33671796950900101EF9 /* Default@2x.png */,
+				E1CD33691796950900101EF9 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -108,6 +199,24 @@
 			productReference = E1CD333E17968ED500101EF9 /* libHUIPatternLockView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		E1CD33521796950900101EF9 /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1CD33711796950900101EF9 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				E1CD334F1796950900101EF9 /* Sources */,
+				E1CD33501796950900101EF9 /* Frameworks */,
+				E1CD33511796950900101EF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1CD33751796951400101EF9 /* PBXTargetDependency */,
+			);
+			name = Demo;
+			productName = Demo;
+			productReference = E1CD33531796950900101EF9 /* Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -130,9 +239,29 @@
 			projectRoot = "";
 			targets = (
 				E1CD333D17968ED500101EF9 /* HUIPatternLockView */,
+				E1CD33521796950900101EF9 /* Demo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1CD33511796950900101EF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CD335E1796950900101EF9 /* InfoPlist.strings in Resources */,
+				E1CD33661796950900101EF9 /* Default.png in Resources */,
+				E1CD33681796950900101EF9 /* Default@2x.png in Resources */,
+				E1CD336A1796950900101EF9 /* Default-568h@2x.png in Resources */,
+				E1CD33701796950900101EF9 /* ViewController.xib in Resources */,
+				E1CD337B1796986E00101EF9 /* patternlock_dot_normal_highlighted.png in Resources */,
+				E1CD337C1796986E00101EF9 /* patternlock_dot_normal_highlighted@2x.png in Resources */,
+				E1CD337D1796986E00101EF9 /* patternlock_dot_normal.png in Resources */,
+				E1CD337E1796986E00101EF9 /* patternlock_dot_normal@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1CD333A17968ED500101EF9 /* Sources */ = {
@@ -143,7 +272,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1CD334F1796950900101EF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CD33601796950900101EF9 /* main.m in Sources */,
+				E1CD33641796950900101EF9 /* AppDelegate.m in Sources */,
+				E1CD336D1796950900101EF9 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1CD33751796951400101EF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1CD333D17968ED500101EF9 /* HUIPatternLockView */;
+			targetProxy = E1CD33741796951400101EF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E1CD335C1796950900101EF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1CD335D1796950900101EF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E1CD336E1796950900101EF9 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1CD336F1796950900101EF9 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E1CD334A17968ED500101EF9 /* Debug */ = {
@@ -223,6 +389,31 @@
 			};
 			name = Release;
 		};
+		E1CD33721796950900101EF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E1CD33731796950900101EF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -240,6 +431,14 @@
 			buildConfigurations = (
 				E1CD334D17968ED500101EF9 /* Debug */,
 				E1CD334E17968ED500101EF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E1CD33711796950900101EF9 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CD33721796950900101EF9 /* Debug */,
+				E1CD33731796950900101EF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
