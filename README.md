@@ -6,7 +6,7 @@ A pattern lock view for iOS
 
 Preview
 ==================
-![](http://rockonmycode.com/images/posts/HUIPatternLockView_preview.png)
+![](http://codingobjc.com/images/posts/HUIPatternLockView_preview.png)
 
 
 How To Use
