@@ -14,40 +14,53 @@
 @interface HUIPatternLockView : UIView
 
 /**
- * Dot image for normal state
+ *  The rows of the dots. Default is 3, should not be less or equal to 0.
  */
-@property (nonatomic, strong) UIImage *dotNormalImage;
-
+@property (nonatomic, assign) NSInteger numberOfRows;
 
 /**
- * Dot image for highlighted state
+ *  The columns of the dots. Default is 3, should not be less or equal to 0.
  */
-@property (nonatomic, strong) UIImage *dotHighlightedImage;
-
+@property (nonatomic, assign) NSInteger numberOfColumns;
 
 /**
- * The width for each dot image. Default is 60 pt.
+ *  The distance that the dots view is inset from the enclosing pattern lock view.
+ *  Default is UIEdgeInsetsZero.
+ */
+@property (nonatomic, assign) UIEdgeInsets contentInset;
+
+/**
+ *  The width of the dot. Default is 60pt, should not be less or equal to 10pt
+ *  if (numberOfRows * dotWidth) or (numberOfColumns * dotWidth) is bigger than the content size. There will be an exception.
  */
 @property (nonatomic, assign) CGFloat dotWidth;
-
-
-/**
- * Number of dots in each line/row. !!!The min size and the default size is 3.
- *
- */
-@property (nonatomic, assign, readonly) NSUInteger cubeSize;
-
 
 /**
  * The color of the line. Default is RGBA(248, 200, 79, 1.0)
  */
 @property (nonatomic, strong) UIColor *lineColor;
 
-
 /**
  * The width of the line. Default is 5pt
  */
 @property (nonatomic, assign) CGFloat lineWidth;
+
+
+/**
+ *  background Image for the pattern lock view
+ */
+@property (nonatomic, strong) UIImage *backgroundImage;
+
+/**
+ * Dot image for normal state
+ */
+@property (nonatomic, strong) UIImage *normalDotImage;
+
+/**
+ * Dot image for highlighted state
+ */
+@property (nonatomic, strong) UIImage *highlightedDotImage;
+
 
 
 /**
@@ -60,7 +73,7 @@
 /**
  * Block style delegate methods
  *
- * See also -patternLockView:didDrawPatternWithDotCounts:password: method in <HUIPatternLockViewDelegate>.
+ * See also -patternLockView:didDrawPatternWithDotCounts:password: method in <HUIPatternLockViewDelegate> protocol.
  */
 @property (nonatomic, copy) void(^didDrawPatternWithPassword)(HUIPatternLockView *lockView, NSUInteger dotCounts, NSString *password);
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1538EC818DB3149000E8F68 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538EC618DB3149000E8F68 /* bg.png */; };
+		E1538EC918DB3149000E8F68 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538EC718DB3149000E8F68 /* bg@2x.png */; };
+		E1538ECF18DC1D35000E8F68 /* screenshot_3x3.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538ECD18DC1D35000E8F68 /* screenshot_3x3.png */; };
+		E1538ED018DC1D35000E8F68 /* screenshot_3x4.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538ECE18DC1D35000E8F68 /* screenshot_3x4.png */; };
 		E1CD334217968ED500101EF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CD334117968ED500101EF9 /* Foundation.framework */; };
 		E1CD334717968ED500101EF9 /* HUIPatternLockView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E1CD334617968ED500101EF9 /* HUIPatternLockView.h */; };
 		E1CD334917968ED500101EF9 /* HUIPatternLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD334817968ED500101EF9 /* HUIPatternLockView.m */; };
@@ -52,6 +56,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E1538EC618DB3149000E8F68 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		E1538EC718DB3149000E8F68 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		E1538ECD18DC1D35000E8F68 /* screenshot_3x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot_3x3.png; sourceTree = "<group>"; };
+		E1538ECE18DC1D35000E8F68 /* screenshot_3x4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot_3x4.png; sourceTree = "<group>"; };
 		E1CD333E17968ED500101EF9 /* libHUIPatternLockView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHUIPatternLockView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CD334117968ED500101EF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E1CD334517968ED500101EF9 /* HUIPatternLockView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HUIPatternLockView-Prefix.pch"; sourceTree = "<group>"; };
@@ -101,6 +109,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1538ECA18DB3156000E8F68 /* imageResources */ = {
+			isa = PBXGroup;
+			children = (
+				E1CD33771796986E00101EF9 /* patternlock_dot_normal_highlighted.png */,
+				E1CD33781796986E00101EF9 /* patternlock_dot_normal_highlighted@2x.png */,
+				E1CD33791796986E00101EF9 /* patternlock_dot_normal.png */,
+				E1CD337A1796986E00101EF9 /* patternlock_dot_normal@2x.png */,
+				E1538EC618DB3149000E8F68 /* bg.png */,
+				E1538EC718DB3149000E8F68 /* bg@2x.png */,
+			);
+			name = imageResources;
+			sourceTree = "<group>";
+		};
+		E1538ED118DC1D46000E8F68 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				E1538ECD18DC1D35000E8F68 /* screenshot_3x3.png */,
+				E1538ECE18DC1D35000E8F68 /* screenshot_3x4.png */,
+			);
+			name = screenshots;
+			sourceTree = "<group>";
+		};
 		E1CD333517968ED500101EF9 = {
 			isa = PBXGroup;
 			children = (
@@ -151,15 +181,13 @@
 		E1CD33591796950900101EF9 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				E1CD33771796986E00101EF9 /* patternlock_dot_normal_highlighted.png */,
-				E1CD33781796986E00101EF9 /* patternlock_dot_normal_highlighted@2x.png */,
-				E1CD33791796986E00101EF9 /* patternlock_dot_normal.png */,
-				E1CD337A1796986E00101EF9 /* patternlock_dot_normal@2x.png */,
 				E1CD33621796950900101EF9 /* AppDelegate.h */,
 				E1CD33631796950900101EF9 /* AppDelegate.m */,
 				E1CD336B1796950900101EF9 /* ViewController.h */,
 				E1CD336C1796950900101EF9 /* ViewController.m */,
 				E1CD336E1796950900101EF9 /* ViewController.xib */,
+				E1538ECA18DB3156000E8F68 /* imageResources */,
+				E1538ED118DC1D46000E8F68 /* screenshots */,
 				E1CD335A1796950900101EF9 /* Supporting Files */,
 			);
 			path = Demo;
@@ -225,6 +253,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = ZhangTinghui;
+				TargetAttributes = {
+					E1CD33521796950900101EF9 = {
+						DevelopmentTeam = 45FD3MJY4K;
+					};
+				};
 			};
 			buildConfigurationList = E1CD333917968ED500101EF9 /* Build configuration list for PBXProject "HUIPatternLockView" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -249,9 +282,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1538ECF18DC1D35000E8F68 /* screenshot_3x3.png in Resources */,
+				E1538ED018DC1D35000E8F68 /* screenshot_3x4.png in Resources */,
+				E1538EC818DB3149000E8F68 /* bg.png in Resources */,
 				E1CD335E1796950900101EF9 /* InfoPlist.strings in Resources */,
 				E1CD33661796950900101EF9 /* Default.png in Resources */,
 				E1CD33681796950900101EF9 /* Default@2x.png in Resources */,
+				E1538EC918DB3149000E8F68 /* bg@2x.png in Resources */,
 				E1CD336A1796950900101EF9 /* Default-568h@2x.png in Resources */,
 				E1CD33701796950900101EF9 /* ViewController.xib in Resources */,
 				E1CD337B1796986E00101EF9 /* patternlock_dot_normal_highlighted.png in Resources */,
@@ -392,6 +429,7 @@
 		E1CD33721796950900101EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
@@ -404,6 +442,7 @@
 		E1CD33731796950900101EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
@@ -433,6 +472,7 @@
 				E1CD334E17968ED500101EF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1CD33711796950900101EF9 /* Build configuration list for PBXNativeTarget "Demo" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +481,7 @@
 				E1CD33731796950900101EF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
