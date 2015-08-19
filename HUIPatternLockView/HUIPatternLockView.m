@@ -24,21 +24,22 @@
 
 @implementation HUIPatternLockViewDot
 
-+ (instancetype)dotWithNumber:(NSUInteger)number frame:(CGRect)frame
-{
-    id dot = [[self alloc] init];
-    [dot setNumber:number];
-    [dot setFrame:frame];
-    [dot setCenter:CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame))];
++ (instancetype)dotWithNumber:(NSUInteger)number frame:(CGRect)frame {
+    HUIPatternLockViewDot *dot = [[self alloc] init];
+    dot.number  = number;
+    dot.frame   = frame;
+    dot.center  = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
     return dot;
 }
 @end
 
 
+
+
 #pragma mark - @class HUIPatternLockView
-static NSInteger const kDefaultNumberOfRowsOrColumns = 3;
-static CGFloat const kDefaultDotWidth = 60.00f;
-static CGFloat const kDefaultLineWidth = 8.0f;
+static const NSInteger  kDefaultNumberOfRowsOrColumns   = 3;
+static const CGFloat    kDefaultDotWidth                = 60.00f;
+static const CGFloat    kDefaultLineWidth               = 8.0f;
 #define kDefaultLineColor   [UIColor colorWithRed:248.00/255.00 green:200.0/255.00 blue:79.0/255.00 alpha:1.0]
 
 @interface HUIPatternLockView ()
@@ -52,13 +53,11 @@ static CGFloat const kDefaultLineWidth = 8.0f;
 
 @implementation HUIPatternLockView
 
-- (void)dealloc
-{
+- (void)dealloc {
     [self _removeKVOObserverOnSelfPropertiesWhichEffectsDotsFrames];
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self == nil) {
         return nil;
@@ -72,19 +71,17 @@ static CGFloat const kDefaultLineWidth = 8.0f;
 }
 
 #pragma mark - Draw Rect
-- (void)_loadDefaultConfiguration
-{
-    self.numberOfRows = kDefaultNumberOfRowsOrColumns;
-    self.numberOfColumns = kDefaultNumberOfRowsOrColumns;
-    self.lineColor  = kDefaultLineColor;
-    self.lineWidth  = kDefaultLineWidth;
-    self.dotWidth   = kDefaultDotWidth;
-    self.contentInset = UIEdgeInsetsZero;
-    self.needRecalculateDotsFrame = YES;
+- (void)_loadDefaultConfiguration {
+    self.numberOfRows               = kDefaultNumberOfRowsOrColumns;
+    self.numberOfColumns            = kDefaultNumberOfRowsOrColumns;
+    self.lineColor                  = kDefaultLineColor;
+    self.lineWidth                  = kDefaultLineWidth;
+    self.dotWidth                   = kDefaultDotWidth;
+    self.contentInset               = UIEdgeInsetsZero;
+    self.needRecalculateDotsFrame   = YES;
 }
 
-- (void)_resetDotsStateWithBounds:(CGRect)bounds
-{
+- (void)_resetDotsStateWithBounds:(CGRect)bounds {
     self.normalDots = [NSMutableArray array];
     self.highlightedDots = [NSMutableArray array];
     self.linePath   = [NSMutableArray array];
@@ -120,15 +117,14 @@ static CGFloat const kDefaultLineWidth = 8.0f;
     }
 }
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
     //recalculate dots' frame if needed
     if (self.needRecalculateDotsFrame) {
         [self _resetDotsStateWithBounds:self.bounds];
     }
     self.needRecalculateDotsFrame = NO;
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
     
     //draw background image
     if (self.backgroundImage != nil) {
@@ -143,36 +139,37 @@ static CGFloat const kDefaultLineWidth = 8.0f;
     CGContextSetStrokeColorWithColor(context, [self.lineColor CGColor]);
     CGContextSetLineWidth(context, self.lineWidth);
     CGContextSetLineJoin(context, kCGLineJoinRound);
-    if ([self.linePath count] > 0)
-    {
+    if ([self.linePath count] > 0) {
         NSValue *firstValue = self.linePath[0];
-        
-        for (NSValue *pointValue in self.linePath)
-        {
+        for (NSValue *pointValue in self.linePath) {
             CGPoint point = [pointValue CGPointValue];
-            if (pointValue == firstValue)
+            if (pointValue == firstValue) {
                 CGContextMoveToPoint(context, point.x, point.y);
-            else
+            }
+            else {
                 CGContextAddLineToPoint(context, point.x, point.y);
+            }
         }
     }
     CGContextDrawPath(context, kCGPathStroke);
     
     //draw dot images
     if (self.normalDotImage != nil) {
-        for (HUIPatternLockViewDot *dot in self.normalDots)
+        for (HUIPatternLockViewDot *dot in self.normalDots) {
             [self.normalDotImage drawInRect:dot.frame];
+        }
     }
+    
     if (self.highlightedDotImage != nil) {
-        for (HUIPatternLockViewDot *dot in self.highlightedDots)
+        for (HUIPatternLockViewDot *dot in self.highlightedDots) {
             [self.highlightedDotImage drawInRect:dot.frame];
+        }
     }
 }
 
 
 #pragma mark - Properties
-- (void)setNumberOfRows:(NSInteger)numberOfRows
-{
+- (void)setNumberOfRows:(NSInteger)numberOfRows {
     if (numberOfRows <= 0) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException
                                        reason:@"numberOfRows should not less or equal to Zero"
@@ -183,8 +180,7 @@ static CGFloat const kDefaultLineWidth = 8.0f;
     _numberOfRows = numberOfRows;
 }
 
-- (void)setNumberOfColumns:(NSInteger)numberOfColumns
-{
+- (void)setNumberOfColumns:(NSInteger)numberOfColumns {
     if (numberOfColumns <= 0) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException
                                        reason:@"numberOfColumns should not less or equal to Zero"
@@ -195,8 +191,7 @@ static CGFloat const kDefaultLineWidth = 8.0f;
     _numberOfColumns = numberOfColumns;
 }
 
-- (void)setDotWidth:(CGFloat)dotWidth
-{
+- (void)setDotWidth:(CGFloat)dotWidth {
     if (dotWidth <= 10.00) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException
                                        reason:@"dotWidth should not less or equal to 10pt, too small make\
@@ -208,8 +203,7 @@ static CGFloat const kDefaultLineWidth = 8.0f;
     _dotWidth = dotWidth;
 }
 
-- (void)setLineColor:(UIColor *)lineColor
-{
+- (void)setLineColor:(UIColor *)lineColor {
     if (_lineColor == lineColor) {
         return;
     }
@@ -218,64 +212,42 @@ static CGFloat const kDefaultLineWidth = 8.0f;
     [self setNeedsDisplay];
 }
 
-- (void)setLineWidth:(CGFloat)lineWidth
-{
+- (void)setLineWidth:(CGFloat)lineWidth {
     _lineWidth = lineWidth;
     [self setNeedsDisplay];
 }
 
 #pragma mark - KVO
-- (BOOL)_isKVOKeyPathIsThePropertyWhichEffectsDotsFrames:(NSString *)KVOKeyPath
-{
-    if ([KVOKeyPath isEqualToString:NSStringFromSelector(@selector(frame))]
-        || [KVOKeyPath isEqualToString:NSStringFromSelector(@selector(numberOfRows))]
-        || [KVOKeyPath isEqualToString:NSStringFromSelector(@selector(numberOfColumns))]
-        || [KVOKeyPath isEqualToString:NSStringFromSelector(@selector(dotWidth))]
-        || [KVOKeyPath isEqualToString:NSStringFromSelector(@selector(contentInset))]) {
-        return YES;
+- (NSArray *)_propertyKeyPathesWhichEffectsDotsFrames {
+    return @[NSStringFromSelector(@selector(frame)),
+             NSStringFromSelector(@selector(numberOfRows)),
+             NSStringFromSelector(@selector(numberOfColumns)),
+             NSStringFromSelector(@selector(dotWidth)),
+             NSStringFromSelector(@selector(contentInset))];
+}
+
+- (BOOL)_isKVOKeyPathIsThePropertyWhichEffectsDotsFrames:(NSString *)KVOKeyPath {
+    return [[self _propertyKeyPathesWhichEffectsDotsFrames] containsObject:KVOKeyPath];
+}
+
+- (void)_removeKVOObserverOnSelfPropertiesWhichEffectsDotsFrames {
+    NSArray *keyPathes = [self _propertyKeyPathesWhichEffectsDotsFrames];
+    for (NSString *keyPath in keyPathes) {
+        [self removeObserver:self forKeyPath:keyPath];
     }
-    
-    return NO;
 }
 
-- (void)_removeKVOObserverOnSelfPropertiesWhichEffectsDotsFrames
-{
-    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(frame))];
-    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(numberOfRows))];
-    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(numberOfColumns))];
-    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(dotWidth))];
-    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(contentInset))];
-}
-
-- (void)_addKVOObserverOnSelfPropertiesWhichEffectsDotsFrames
-{
-    [self addObserver:self
-           forKeyPath:NSStringFromSelector(@selector(frame))
-              options:NSKeyValueObservingOptionNew
-              context:nil];
-    [self addObserver:self
-           forKeyPath:NSStringFromSelector(@selector(numberOfRows))
-              options:NSKeyValueObservingOptionNew
-              context:nil];
-    [self addObserver:self
-           forKeyPath:NSStringFromSelector(@selector(numberOfColumns))
-              options:NSKeyValueObservingOptionNew
-              context:nil];
-    [self addObserver:self
-           forKeyPath:NSStringFromSelector(@selector(dotWidth))
-              options:NSKeyValueObservingOptionNew
-              context:nil];
-    [self addObserver:self
-           forKeyPath:NSStringFromSelector(@selector(contentInset))
-              options:NSKeyValueObservingOptionNew
-              context:nil];
+- (void)_addKVOObserverOnSelfPropertiesWhichEffectsDotsFrames {
+    NSArray *keyPathes = [self _propertyKeyPathesWhichEffectsDotsFrames];
+    for (NSString *keyPath in keyPathes) {
+        [self addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew context:nil];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context
-{
+                       context:(void *)context {
     if (object != self || ![self _isKVOKeyPathIsThePropertyWhichEffectsDotsFrames:keyPath]) {
         return;
     }
@@ -285,8 +257,7 @@ static CGFloat const kDefaultLineWidth = 8.0f;
 }
 
 #pragma mark - Record Line Path
-- (HUIPatternLockViewDot *)_normalDotContainsPoint:(CGPoint)point
-{
+- (HUIPatternLockViewDot *)_normalDotContainsPoint:(CGPoint)point {
     for (HUIPatternLockViewDot * dot in self.normalDots){
         if (CGRectContainsPoint(dot.frame, point)) {
             return dot;
@@ -295,22 +266,20 @@ static CGFloat const kDefaultLineWidth = 8.0f;
     return nil;
 }
 
-- (void)_updateLinePathWithPoint:(CGPoint)point
-{
+- (void)_updateLinePathWithPoint:(CGPoint)point {
     HUIPatternLockViewDot *dot = [self _normalDotContainsPoint:point];
+    NSInteger linePathPointsCount = [self.linePath count];
     
-    NSInteger linePathPointCount = [self.linePath count];
     if (dot != nil) {
-        
         NSValue *pointValue = [NSValue valueWithCGPoint:dot.center];
-        if (linePathPointCount <= 0) {
+        if (linePathPointsCount <= 0) {
             //if no any points in linePath. use this dot's center to be the linePath start and end point
             [self.linePath addObject:pointValue];
             [self.linePath addObject:pointValue];
         }
         else {
             //else insert a new point into the path
-            [self.linePath insertObject:pointValue atIndex:linePathPointCount-1];
+            [self.linePath insertObject:pointValue atIndex:linePathPointsCount-1];
         }
         
         //mark this dot as highlighted
@@ -320,26 +289,24 @@ static CGFloat const kDefaultLineWidth = 8.0f;
     else {
         
         NSValue *pointValue = [NSValue valueWithCGPoint:point];
-        if (linePathPointCount == 0) {
+        if (linePathPointsCount == 0) {
             //linePath must start with a dot's center
             return;
         }
-        else if (linePathPointCount == 1) {
+        else if (linePathPointsCount == 1) {
             //if linePath has a start point, this point is treat as end point
             [self.linePath addObject:pointValue];
         }
         else {
             //else if line path has at least two points. always use this point to update the end point
-            self.linePath[linePathPointCount-1] = pointValue;
+            self.linePath[linePathPointsCount-1] = pointValue;
         }
     }
-    
 }
 
-- (void)_endLinePathWithPoint:(CGPoint)point
-{
+- (void)_endLinePathWithPoint:(CGPoint)point {
     HUIPatternLockViewDot *dot = [self _normalDotContainsPoint:point];
-    if (dot) {
+    if (dot != nil) {
         [self.normalDots removeObject:dot];
         [self.highlightedDots addObject:dot];
     }
@@ -353,21 +320,18 @@ static CGFloat const kDefaultLineWidth = 8.0f;
 }
 
 #pragma mark Touches
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self _resetDotsStateWithBounds:self.bounds];
     [self _updateLinePathWithPoint:[[touches anyObject] locationInView:self]];
     [self setNeedsDisplay];
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [self _updateLinePathWithPoint:[[touches anyObject] locationInView:self]];
     [self setNeedsDisplay];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     /*  end the line path and get the password
      */
     [self _endLinePathWithPoint:[[touches anyObject] locationInView:self]];
@@ -392,19 +356,24 @@ static CGFloat const kDefaultLineWidth = 8.0f;
     
     /*  Notify the delegate
      */
-    if (dotCounts <= 0)
+    if (dotCounts <= 0) {
         return;
-    if (self.didDrawPatternWithPassword)
-        self.didDrawPatternWithPassword(self, dotCounts, password);
+    }
     
-    if ([self.delegate respondsToSelector:@selector(patternLockView:didDrawPatternWithDotCounts:password:)])
+    if (self.didDrawPatternWithPassword) {
+        self.didDrawPatternWithPassword(self, dotCounts, password);
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(patternLockView:didDrawPatternWithDotCounts:password:)]) {
         [self.delegate patternLockView:self didDrawPatternWithDotCounts:dotCounts password:password];
+    }
 }
 
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [self _resetDotsStateWithBounds:self.bounds];
     [self setNeedsDisplay];
 }
 
 @end
+
+
