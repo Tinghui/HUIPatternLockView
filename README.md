@@ -1,9 +1,3 @@
-## HUIPatternLockView
-
-A pattern lock view for iOS
-
-!!!Notice: the format of the password has been changed to new format "[1][2][3]" from  old format"001002003".
-
 
 ## Preview
 ![](https://raw.githubusercontent.com/Tinghui/HUIPatternLockView/master/Demo/screenshot_3x3.png) ![](https://raw.githubusercontent.com/Tinghui/HUIPatternLockView/master/Demo/screenshot_3x4.png)
@@ -38,3 +32,5 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+
+
