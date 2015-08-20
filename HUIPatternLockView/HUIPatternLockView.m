@@ -31,6 +31,7 @@
     dot.center  = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
     return dot;
 }
+
 @end
 
 
@@ -57,17 +58,30 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
     [self _removeKVOObserverOnSelfPropertiesWhichEffectsDotsFrames];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self == nil) {
-        return nil;
+    if (self != nil) {
+        [self _loadDefaultConfiguration];
+        [self _addKVOObserverOnSelfPropertiesWhichEffectsDotsFrames];
+        [self setNeedsDisplay];
     }
     
-    [self _loadDefaultConfiguration];
-    [self _addKVOObserverOnSelfPropertiesWhichEffectsDotsFrames];
-    [self setNeedsDisplay];
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        [self _loadDefaultConfiguration];
+        [self _addKVOObserverOnSelfPropertiesWhichEffectsDotsFrames];
+        [self setNeedsDisplay];
+    }
     
     return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [super encodeWithCoder:aCoder];
 }
 
 #pragma mark - Draw Rect

@@ -18,18 +18,18 @@
 		E1CD33561796950900101EF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CD334117968ED500101EF9 /* Foundation.framework */; };
 		E1CD33581796950900101EF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CD33571796950900101EF9 /* CoreGraphics.framework */; };
 		E1CD335E1796950900101EF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1CD335C1796950900101EF9 /* InfoPlist.strings */; };
-		E1CD33601796950900101EF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD335F1796950900101EF9 /* main.m */; };
 		E1CD33641796950900101EF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD33631796950900101EF9 /* AppDelegate.m */; };
 		E1CD33661796950900101EF9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33651796950900101EF9 /* Default.png */; };
 		E1CD33681796950900101EF9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33671796950900101EF9 /* Default@2x.png */; };
 		E1CD336A1796950900101EF9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33691796950900101EF9 /* Default-568h@2x.png */; };
-		E1CD336D1796950900101EF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD336C1796950900101EF9 /* ViewController.m */; };
 		E1CD33701796950900101EF9 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD336E1796950900101EF9 /* ViewController.xib */; };
 		E1CD33761796951900101EF9 /* libHUIPatternLockView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CD333E17968ED500101EF9 /* libHUIPatternLockView.a */; };
 		E1CD337B1796986E00101EF9 /* patternlock_dot_normal_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33771796986E00101EF9 /* patternlock_dot_normal_highlighted.png */; };
 		E1CD337C1796986E00101EF9 /* patternlock_dot_normal_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33781796986E00101EF9 /* patternlock_dot_normal_highlighted@2x.png */; };
 		E1CD337D1796986E00101EF9 /* patternlock_dot_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD33791796986E00101EF9 /* patternlock_dot_normal.png */; };
 		E1CD337E1796986E00101EF9 /* patternlock_dot_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CD337A1796986E00101EF9 /* patternlock_dot_normal@2x.png */; };
+		E1F0D6081B85C7BD001AB55E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD335F1796950900101EF9 /* main.m */; };
+		E1F0D6091B85C7C0001AB55E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD336C1796950900101EF9 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -313,9 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1CD33601796950900101EF9 /* main.m in Sources */,
+				E1F0D6091B85C7C0001AB55E /* ViewController.m in Sources */,
 				E1CD33641796950900101EF9 /* AppDelegate.m in Sources */,
-				E1CD336D1796950900101EF9 /* ViewController.m in Sources */,
+				E1F0D6081B85C7BD001AB55E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +434,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -448,6 +449,7 @@
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -12,8 +12,7 @@
 
 @protocol HUIPatternLockViewDelegate;
 
-
-@interface HUIPatternLockView : UIView
+@interface HUIPatternLockView : UIView <NSCoding>
 
 #pragma mark Layouts Related Properties
 /*!
@@ -86,7 +85,7 @@
  *
  *  @see <HUIPatternLockViewDelegate> protocol
  */
-@property (nonatomic, weak) id<HUIPatternLockViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<HUIPatternLockViewDelegate> delegate;
 
 
 /*!
