@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <development version="6000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
@@ -19,21 +19,28 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="UEx-Wt-hyE">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8" customClass="HUIPatternLockView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="b0M-rm-Hsi"/>
                     </connections>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="1qx-sb-gDW">
                     <rect key="frame" x="8" y="64" width="304" height="0.0"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQz-ol-FEb">
-                    <rect key="frame" x="167" y="514" width="138" height="34"/>
+                    <rect key="frame" x="169" y="514" width="136" height="34"/>
+                    <animations/>
                     <state key="normal" title="Forgot Password">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -42,6 +49,7 @@
                     </connections>
                 </button>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="9"/>
@@ -49,7 +57,11 @@
                 <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="11"/>
                 <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" id="12"/>
                 <constraint firstItem="1qx-sb-gDW" firstAttribute="top" secondItem="6" secondAttribute="top" constant="64" id="G1W-oZ-JOt"/>
+                <constraint firstItem="UEx-Wt-hyE" firstAttribute="top" secondItem="8" secondAttribute="top" id="SD7-F2-WRb"/>
                 <constraint firstAttribute="bottom" secondItem="tQz-ol-FEb" secondAttribute="bottom" constant="20" id="SR5-sa-f5w"/>
+                <constraint firstItem="UEx-Wt-hyE" firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="Tpp-xZ-EET"/>
+                <constraint firstItem="UEx-Wt-hyE" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="ZZ6-mn-Gv7"/>
+                <constraint firstItem="UEx-Wt-hyE" firstAttribute="leading" secondItem="8" secondAttribute="leading" id="bjw-Ya-Pw1"/>
                 <constraint firstItem="1qx-sb-gDW" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="8" id="iP9-31-ukO"/>
                 <constraint firstAttribute="trailing" secondItem="1qx-sb-gDW" secondAttribute="trailing" constant="8" id="lUy-Ct-CUz"/>
                 <constraint firstAttribute="trailing" secondItem="tQz-ol-FEb" secondAttribute="trailing" constant="15" id="tlz-ce-h2d"/>
@@ -57,9 +69,7 @@
             <point key="canvasLocation" x="-74" y="-17"/>
         </view>
     </objects>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
+    <resources>
+        <image name="bg.png" width="360" height="640"/>
+    </resources>
 </document>

@@ -63,11 +63,6 @@
 @property (nonatomic, assign) CGFloat lineWidth;
 
 /*!
- *  The background image for the pattern lock view.
- */
-@property (nonatomic, strong) UIImage *backgroundImage;
-
-/*!
  *  Dot image for the normal state
  */
 @property (nonatomic, strong) UIImage *normalDotImage;

@@ -23,7 +23,6 @@
     __weak __typeof(&*self)weakSelf = self;
     self.lockView.contentInset = UIEdgeInsetsMake(150, 20, 150, 20);
     self.lockView.dotWidth = 50;
-    self.lockView.backgroundImage = [UIImage imageNamed:@"bg"];
     self.lockView.normalDotImage = [UIImage imageNamed:@"patternlock_dot_normal"];
     self.lockView.highlightedDotImage = [UIImage imageNamed:@"patternlock_dot_normal_highlighted"];
     [self.lockView setDidDrawPatternWithPassword:^(HUIPatternLockView *lockView, NSUInteger dotCount, NSString *password) {

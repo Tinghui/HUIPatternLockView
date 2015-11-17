@@ -137,16 +137,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
     //recalculate dots' frame if needed
     if (self.needRecalculateDotsFrame) {
         [self _resetDotsStateWithBounds:self.bounds];
-    }
-    self.needRecalculateDotsFrame = NO;
-    
-    //draw background image
-    if (self.backgroundImage != nil) {
-        CGPoint point = CGPointMake((CGRectGetWidth(rect) - self.backgroundImage.size.width) * 0.5f,
-                                    (CGRectGetHeight(rect) - self.backgroundImage.size.height) * 0.5f);
-        [self.backgroundImage drawAtPoint:point
-                                blendMode:kCGBlendModeNormal
-                                    alpha:1.0];
+        self.needRecalculateDotsFrame = NO;
     }
     
     //draw line
