@@ -1,10 +1,20 @@
+Looking for a Swift version? Checkout [HUIPatternLockView-Swift](https://github.com/Tinghui/HUIPatternLockView-Swift).
 
-## Preview
+## Demo Project
+See `HUIPatternLockView.xcodeproj`
+
 ![](https://raw.githubusercontent.com/Tinghui/HUIPatternLockView/master/Demo/screenshot_3x3.png) ![](https://raw.githubusercontent.com/Tinghui/HUIPatternLockView/master/Demo/screenshot_3x4.png)
 
 
-## How To Use
-Please see the demo for details
+## Installation by CocoaPods
+1. Add pod into your Podfile
+
+	```objc
+	pod 'HUIPatternLockView', :git => 'https://github.com/Tinghui/HUIPatternLockView.git', :tag => '1.0.1'
+	```
+	
+2. Run `pod install`
+3. `#import <HUIPatternLockView/HUIPatternLockView.h>`
 
 
 ## License
