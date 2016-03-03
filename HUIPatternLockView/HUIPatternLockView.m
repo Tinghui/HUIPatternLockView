@@ -95,7 +95,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
     self.needRecalculateDotsFrame   = YES;
 }
 
-- (void)_resetDotsStateWithBounds:(CGRect)bounds {
+- (void)_resetDotsStates {
     self.normalDots = [NSMutableArray array];
     self.highlightedDots = [NSMutableArray array];
     self.linePath   = [NSMutableArray array];
@@ -136,7 +136,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
     
     //recalculate dots' frame if needed
     if (self.needRecalculateDotsFrame) {
-        [self _resetDotsStateWithBounds:self.bounds];
+        [self _resetDotsStates];
         self.needRecalculateDotsFrame = NO;
     }
     
@@ -326,7 +326,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
 
 #pragma mark Touches
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self _resetDotsStateWithBounds:self.bounds];
+    [self _resetDotsStates];
     [self _updateLinePathWithPoint:[[touches anyObject] locationInView:self]];
     [self setNeedsDisplay];
 }
@@ -345,18 +345,9 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
      */
     NSUInteger dotCounts = [self.highlightedDots count];
     NSMutableString *password = [NSMutableString string];
-    for (HUIPatternLockViewDot *dot in self.highlightedDots)
+    for (HUIPatternLockViewDot *dot in self.highlightedDots) {
         [password appendFormat:@"[%lu]", (unsigned long)dot.number];
-    
-    /*  reset dots state after 0.5. Make the line display 0.5 seconds
-     */
-    double delayInSeconds = 0.5;
-    __weak __typeof(&*self)weakSelf = self;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [weakSelf _resetDotsStateWithBounds:weakSelf.bounds];
-        [weakSelf setNeedsDisplay];
-    });
+    }
     
     
     /*  Notify the delegate
@@ -375,7 +366,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self _resetDotsStateWithBounds:self.bounds];
+    [self _resetDotsStates];
     [self setNeedsDisplay];
 }
 
