@@ -95,7 +95,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
     self.needRecalculateDotsFrame   = YES;
 }
 
-- (void)_resetDotsStates {
+- (void)resetDotsState {
     self.normalDots = [NSMutableArray array];
     self.highlightedDots = [NSMutableArray array];
     self.linePath   = [NSMutableArray array];
@@ -136,7 +136,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
     
     //recalculate dots' frame if needed
     if (self.needRecalculateDotsFrame) {
-        [self _resetDotsStates];
+        [self resetDotsState];
         self.needRecalculateDotsFrame = NO;
     }
     
@@ -326,7 +326,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
 
 #pragma mark Touches
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self _resetDotsStates];
+    [self resetDotsState];
     [self _updateLinePathWithPoint:[[touches anyObject] locationInView:self]];
     [self setNeedsDisplay];
 }
@@ -340,6 +340,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
     /*  end the line path and get the password
      */
     [self _endLinePathWithPoint:[[touches anyObject] locationInView:self]];
+    [self setNeedsDisplay];
     
     /*  get the pattern info
      */
@@ -366,7 +367,7 @@ static const CGFloat    kDefaultLineWidth               = 8.0f;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self _resetDotsStates];
+    [self resetDotsState];
     [self setNeedsDisplay];
 }
 

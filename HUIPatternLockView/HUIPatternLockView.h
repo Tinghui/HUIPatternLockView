@@ -72,6 +72,11 @@
  */
 @property (nonatomic, strong) UIImage *highlightedDotImage;
 
+/*!
+ *  Reset dots, clean the drawn pattern.
+ */
+- (void)resetDotsState;
+
 
 #pragma mark Delegate
 
