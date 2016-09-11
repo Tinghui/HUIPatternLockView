@@ -1,4 +1,6 @@
-Looking for a Swift version? Checkout [HUIPatternLockView-Swift](https://github.com/Tinghui/HUIPatternLockView-Swift).
+!!! This repository has been deprecated !!!
+
+Please move forward to the swift version [HUIPatternLockView-Swift](https://github.com/Tinghui/HUIPatternLockView-Swift) .
 
 ## Demo Project
 See `HUIPatternLockView.xcodeproj`
